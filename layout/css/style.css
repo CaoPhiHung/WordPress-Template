@@ -64,6 +64,14 @@
     margin-left: auto;
 } */
 
+body {
+    /* background-image: url("../img/background.jpg"); */
+    /* background-color: #cccccc; */
+    /* background-repeat:no-repeat; */
+    /* background-position: center center; */
+    /* height: 100%; */
+}
+
 .five:first-child, .four:first-child, .six:first-child,.three:first-child, .two:first-child, .one:first-child {
     margin-left: 0;
 }
@@ -117,12 +125,12 @@
 
 .topnav {
     background-color: rgba(104,73,49,.9);
-    height: 50px;
+    height: auto;
 }
 
 .topnav nav {
     background-color: rgba(104,73,49,.9);
-    height: 50px;
+    height: auto;
     /* position: fixed; */
     
 }
@@ -130,7 +138,6 @@
 .topnav ul li {
     display: inline-block;
     padding: 15px;
-    float: right;
 }
 
 .topnav ul li a {
@@ -138,7 +145,7 @@
     color: white;
     padding: 5px 8px;
     font-family: Arial, Helvetica, sans-serif;
-    float: right;
+    /* float: right; */
     
 }
 
@@ -278,3 +285,209 @@ img {vertical-align: middle;}
   .text {font-size: 11px}
 }
 /* Slide Show CSS End */
+
+/* The Modal (background) */
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+    padding-top: 70px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+/* banner */
+.img-banner{
+    background-image: url(../img/banner.jpg);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    position: relative;
+}
+
+.inner-container{
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    color: brown;
+    height:auto;
+    /* margin-top: 10%; */
+    padding: 5%;
+}
+
+@media only screen and (max-width: 540px){
+    .inner-container{
+        margin-top: 10%;
+    }
+    h1{
+        font-size: 5em;
+    }
+    h2{
+        font-size: 1.4em;
+    }
+}
+
+@media only screen and (max-width: 920px){
+    .inner-container{
+        margin-top: 10%;
+    }
+}
+
+/* responsive menu */
+/* .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  */
+  .topnav .icon {
+    
+    display: none;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+    .topnav ul li:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        font-size: 27px;
+        float: right;
+        padding: 5px;
+        color: white;
+        margin-right: 13px;
+        display: block;
+    }
+  }
