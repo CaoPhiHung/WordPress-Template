@@ -1,37 +1,7 @@
 <?php
-// var_dump( get_template_directory_uri());
-// require('./lib/page-function.php');
-
  get_header(); 
-
-// showMainPageContent();
 ?>
-<!-- <div style="position: fixed; width:100%; z-index: 1999;">
-<div class="topnav" id="myTopnav"  style="postion: fixed;">
-   <a aria-expanded="false" href="#" id="buttonExpand" class="icon" onclick="toggle('navbar','buttonExpand')">&#9776;</a>
-   <ul id="navbar">
-      <li>
-         <a href="#home">Home</a>
-      </li>
-      <li>
-         <a href="#mission">Mission</a>
-      </li>
-      <li>
-         <a href="#staff">Staff</a>
-      </li>
-      <li>
-         <a href="#services">Service</a>
-      </li>
-      <li style="float: right;">
-         <a href="javascript:;" onclick="document.getElementById('id01').style.display='block'" >Sign In</a>
-      </li>
-      <li>
-         <a href="#">Sign out</a>
-         </li>
-   </ul>
-</div>
-</div> -->
-<!-- div row end -->
+
 <div class="container">
 <div class="row"></div>
 <header role="banner">
@@ -44,27 +14,6 @@
 </div>
 </header>
 <div class="row">
-<!-- <div class="two">
-   <div class="sidebar">
-       <nav aria-labelledby="nav-toggle">
-           <ul>
-           <li class="active">
-               <a href="#home">Home</a>
-           </li>
-           <li>
-               <a href="#mission">Mission</a>
-           </li>
-           <li>
-               <a href="#staff">Staff</a>
-           </li>
-           <li>
-               <a href="#services">Service</a>
-           </li>
-           </ul>
-       </nav>
-   </div>
-   </div> -->
-<!-- div class 2 close -->
 <div class="four">
    <!-- <h1>Vancouver Medical College</h1> -->
    <hr >

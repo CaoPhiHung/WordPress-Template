@@ -1,6 +1,6 @@
 <?php
 // var_dump( get_template_directory_uri());
-// require('./lib/page-function.php');
+require(__DIR__.'./lib/page-function.php');
 
  get_header(); 
 

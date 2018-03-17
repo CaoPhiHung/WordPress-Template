@@ -245,12 +245,4 @@
         <?php
     }
 
-    function showSignInForm(){
-        ?>
-        <div class="four        ">
-        </div>
-            
-        <?php
-    }
 ?>
-Hello world

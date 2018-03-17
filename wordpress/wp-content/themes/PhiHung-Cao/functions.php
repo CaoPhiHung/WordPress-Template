@@ -1,6 +1,4 @@
 <?php
-
-
 function theme_init(){
     register_nav_menus( array(
         'header_menu' => 'Header menu',
