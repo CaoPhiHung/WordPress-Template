@@ -58,29 +58,7 @@
    </div>
 </header>
 <div class="row">
-   <!-- <div class="two">
-      <div class="sidebar">
-          <nav aria-labelledby="nav-toggle">
-              <ul>
-              <li class="active">
-                  <a href="#home">Home</a>
-              </li>
-              <li>
-                  <a href="#mission">Mission</a>
-              </li>
-              <li>
-                  <a href="#staff">Staff</a>
-              </li>
-              <li>
-                  <a href="#services">Service</a>
-              </li>
-              </ul>
-          </nav>
-      </div>
-      </div> -->
-   <!-- div class 2 close -->
    <div class="four">
-      <!-- <h1>Vancouver Medical College</h1> -->
       <hr >
       <!-- The Modal -->
       <div id="id01" class="modal">
@@ -244,13 +222,4 @@
         <!-- End page footer -->
         <?php
     }
-
-    function showSignInForm(){
-        ?>
-        <div class="four        ">
-        </div>
-            
-        <?php
-    }
 ?>
-Hello world
