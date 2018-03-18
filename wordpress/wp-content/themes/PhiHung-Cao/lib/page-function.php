@@ -110,7 +110,7 @@
          of Lorem Ipsum.
       </p>
       <div class="page" id="mission">
-         <div class="content container">
+         <div class="content container" style="text-align: center">
             <h2>Our Mission</h2>
             <div class="row">
                <p>What is Lorem Ipsum?

@@ -62,7 +62,7 @@
          <span class="dot"></span> 
       </div>
       <div class="page" id="mission">
-         <div class="content container">
+         <div class="content">
             <h2><?php echo $mission_page->post_title; ?></h2>
             <div class="row">
                <?php echo apply_filters('the_content', $mission_page->post_content); ?>
@@ -73,7 +73,7 @@
       </div>
       <!-- end mission page -->
       <div class="page" id="staff">
-         <div class="container-fluid">
+         <div class="content">
             <h2 ><?php echo $staff_page->post_title; ?></h2>
             <div class="row">
                <?php echo apply_filters('the_content', $staff_page->post_content); ?>
@@ -84,7 +84,7 @@
       </div>
       <!-- staff page -->
       <div class="page" id="services">
-         <div class="content container">
+         <div class="content">
             <h2><?php echo $service_page->post_title; ?></h2>
             <div class="row">
                <?php echo apply_filters('the_content', $service_page->post_content); ?>

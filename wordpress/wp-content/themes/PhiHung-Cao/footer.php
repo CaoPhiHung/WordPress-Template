@@ -15,6 +15,7 @@
     </p>
 
     <p class="footer-company-name">Phi Hung Cao &copy; 2018</p>
+    <div id="googleMap" style="width:100%;height:200px;padding-top:10px"></div>
 </div>
 
 <div class="footer-center">
@@ -56,6 +57,8 @@
 
 </footer>
     <script src="<?php echo get_template_directory_uri();?>/js/loginmodal.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8cKAF3Kp4eX4dGebz8iwax3Z33pvC9cQ&callback=initMap"
+  type="text/javascript"></script>
     <?php wp_footer(); ?>
     </BODY>
 </HTML>

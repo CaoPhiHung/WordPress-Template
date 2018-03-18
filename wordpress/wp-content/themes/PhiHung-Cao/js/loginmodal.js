@@ -9,6 +9,15 @@ window.onclick = function(event) {
     }
 }
 
+var ul = document.getElementById("navbar");
+if(ul != null){
+var child = ul.children[ul.children.length - 1];
+// console.log(signInDom);
+child.setAttribute('style', 'float: right');
+child.addEventListener("click", function(){
+    document.getElementById('id01').style.display='block';
+});}
+
 function toggle(id, id2) {
     var n = document.getElementById(id);
     var items = n.getElementsByTagName("li");
@@ -31,3 +40,30 @@ function toggle(id, id2) {
         }
     }
   }
+
+//   google map
+  function initMap() {
+    var uluru = {lat: 49.234209, lng: -123.028132};
+        var map = new google.maps.Map(document.getElementById('googleMap'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+}
+
+//sticky header
+var header = document.getElementById("myTopnav");
+if(header != null){
+var sticky = header.offsetTop;
+window.onscroll = function() {
+    if (window.pageYOffset >= sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+
+};
+}
