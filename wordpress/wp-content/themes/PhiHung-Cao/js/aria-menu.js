@@ -19,6 +19,7 @@ $(document).ready(function(){
     $(document).keydown(function(e){
         var focusedItem = $(document.activeElement);
         switch(e.which){
+            case 39:
             case 40: //down arrow
             e.preventDefault();
             console.log("here");
@@ -34,7 +35,8 @@ $(document).ready(function(){
                 })
                 
             break;
-    
+            
+            case 37:
             case 38: // up arrow
             e.preventDefault();
             $('#navbar > li').find("a").each(function(index) {
