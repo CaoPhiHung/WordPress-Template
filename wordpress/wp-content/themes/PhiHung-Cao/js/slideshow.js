@@ -39,5 +39,5 @@ function getWidth() {
     );
   }
   
-  // console.log('Width:  ' +  getWidth() );
-  // console.log('Height: ' + getHeight() );
+  console.log('Width:  ' +  getWidth() );
+  console.log('Height: ' + getHeight() );

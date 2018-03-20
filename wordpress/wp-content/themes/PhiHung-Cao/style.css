@@ -507,6 +507,9 @@ span.psw {
         margin-right: 13px;
         display: block;
     }
+    .pad-top {
+        padding-top: 15%
+    }
   }
   /* sticky header */
   .sticky {
