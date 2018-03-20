@@ -10,13 +10,25 @@ window.onclick = function(event) {
 }
 
 var signin = document.getElementById("signin");
-// if(ul != null){
-// var child = ul.children[ul.children.length - 1];
-// // console.log(signInDom);
-// child.setAttribute('style', 'float: right');
+if(signin != null){
 signin.addEventListener("click", function(){
     document.getElementById('id01').style.display='block';
+    toggle('navbar','buttonExpand');
 });
+}
+
+
+
+var n = document.getElementById('navbar');
+if(n != null){
+var items = n.getElementsByTagName("li");
+for (var i = 0; i < items.length-1; ++i) {
+    // do something with items[i], which is a <li> element
+    items[i].addEventListener("click", function(){
+        toggle('navbar','buttonExpand');
+    });
+}
+}
 
 function toggle(id, id2) {
     var n = document.getElementById(id);

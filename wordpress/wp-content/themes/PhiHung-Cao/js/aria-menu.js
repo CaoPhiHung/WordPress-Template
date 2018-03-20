@@ -3,18 +3,6 @@ $(document).ready(function(){
     var mainMenu = $('#navbar');
     var expandButton = $('#expandButton');
     expandButton.attr('tabindex', 1);
-    console.log(expandButton);
-
-    // expandButton.click(function() {
-        
-    //     // if($('#main-menu:visible').length){
-    //     //     mainMenu.hide();
-            
-    //     // }else{
-    //     //     mainMenu.show();
-    //     //     mainMenu.find('li:first a').focus();
-    //     // }
-    // });
 
     $(document).keydown(function(e){
         var focusedItem = $(document.activeElement);
@@ -22,7 +10,6 @@ $(document).ready(function(){
             case 39:
             case 40: //down arrow
             e.preventDefault();
-            console.log("here");
                 $('#navbar > li').find("a").each(function(index) {
                    var temp = $(this);
                    
