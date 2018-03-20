@@ -9,14 +9,14 @@ window.onclick = function(event) {
     }
 }
 
-var ul = document.getElementById("navbar");
-if(ul != null){
-var child = ul.children[ul.children.length - 1];
-// console.log(signInDom);
-child.setAttribute('style', 'float: right');
-child.addEventListener("click", function(){
+var signin = document.getElementById("signin");
+// if(ul != null){
+// var child = ul.children[ul.children.length - 1];
+// // console.log(signInDom);
+// child.setAttribute('style', 'float: right');
+signin.addEventListener("click", function(){
     document.getElementById('id01').style.display='block';
-});}
+});
 
 function toggle(id, id2) {
     var n = document.getElementById(id);

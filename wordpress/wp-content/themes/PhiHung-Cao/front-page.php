@@ -25,15 +25,16 @@
          <span onclick="document.getElementById('id01').style.display='none'" 
             class="close" title="Close Modal">&times;</span>
          <!-- Modal Content -->
-         <form class="modal-content animate" action="/action_page.php">
+         <form class="modal-content animate" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+         <input type="hidden" name="action" value="process_form">
             <div class="imgcontainer">
                <img src="<?php echo get_template_directory_uri();?>/img/img_avatar2.png" alt="Avatar" class="avatar">
             </div>
             <div style="padding: 16px;">
                <label for="uname"><b>Username</b></label>
-               <input type="text" placeholder="Enter Username" name="uname" required>
+               <input type="text" placeholder="Enter Username" name="username" required>
                <label for="psw"><b>Password</b></label>
-               <input type="password" placeholder="Enter Password" name="psw" required>
+               <input type="password" placeholder="Enter Password" name="password" required>
                <button type="submit">Login</button>
             </div>
          </form>
@@ -62,8 +63,8 @@
          <span class="dot"></span> 
       </div>
       <div class="page" id="mission">
-         <div class="content">
-            <h2><?php echo $mission_page->post_title; ?></h2>
+         <div >
+            <h2 class="content"><?php echo $mission_page->post_title; ?></h2>
             <div class="row">
                <?php echo apply_filters('the_content', $mission_page->post_content); ?>
             </div>
@@ -73,8 +74,8 @@
       </div>
       <!-- end mission page -->
       <div class="page" id="staff">
-         <div class="content">
-            <h2 ><?php echo $staff_page->post_title; ?></h2>
+         <div>
+            <h2 class="content"><?php echo $staff_page->post_title; ?></h2>
             <div class="row">
                <?php echo apply_filters('the_content', $staff_page->post_content); ?>
             </div>
@@ -84,8 +85,8 @@
       </div>
       <!-- staff page -->
       <div class="page" id="services">
-         <div class="content">
-            <h2><?php echo $service_page->post_title; ?></h2>
+         <div>
+            <h2 class="content"><?php echo $service_page->post_title; ?></h2>
             <div class="row">
                <?php echo apply_filters('the_content', $service_page->post_content); ?>
             </div>

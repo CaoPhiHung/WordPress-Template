@@ -5,13 +5,13 @@
     <h3>Vancouver Medical College</h3>
 
     <p class="footer-links">
-        <a href="#">Home</a>
-        ·
-        <a href="#">Mission</a>
-        ·
-        <a href="#">Our Staff</a>
-        ·
-        <a href="#">Service</a>
+    <?php 
+                wp_nav_menu( array(
+                    'theme_location' => 'header_menu',
+                    'menu_class' => 'topnav',
+                    'menu_id' => 'navbar'
+                ) );
+            ?>
     </p>
 
     <p class="footer-company-name">Phi Hung Cao &copy; 2018</p>
@@ -46,10 +46,10 @@
 
     <div class="footer-icons">
 
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-github"></i></a>
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/CaoPhiHung"><i class="fa fa-github"></i></a>
 
     </div>
 

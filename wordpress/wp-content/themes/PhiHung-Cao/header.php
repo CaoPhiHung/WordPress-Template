@@ -25,17 +25,36 @@
             
             <div class="topnav" id="myTopnav"  style="postion: fixed;">
             <a role="button" aria-expanded="false" href="#" id="buttonExpand" class="icon" onclick="toggle('navbar','buttonExpand')">&#9776;</a>
-            <!-- <li style="float: right;">
-                <a href="javascript:;" onclick="document.getElementById('id01').style.display='block'" >Sign In</a>
-            </li> -->
-            <?php 
-                wp_nav_menu( array(
-                    'theme_location' => 'header_menu',
-                    'menu_class' => 'topnav',
-                    'menu_id' => 'navbar'
-                ) );
-            ?>
-            
+            <ul id="navbar">
+         <li>
+            <a href="#home">Home</a>
+         </li>
+         <li>
+            <a href="#mission">Mission</a>
+         </li>
+         <li>
+            <a href="#staff">Staff</a>
+         </li>
+         <li>
+            <a href="#services">Service</a>
+         </li>
+         <?php
+         if(is_user_logged_in()) {
+             ?>
+            <li style="float: right;">
+            <span style="color: white;font-family: Arial, Helvetica, sans-serif;">Wellcome <strong><?php echo $_COOKIE['username'] ?></strong> <span>
+            <a href="<?php echo wp_logout_url( home_url() );?>">Sign out</a>
+            </li>
+            <?php
+         } else {
+             ?>
+            <li style="float: right;">
+            <a id="signin" href="javascript:;" onclick="document.getElementById('id01').style.display='block'" >Sign In</a>
+            </li>
+            <?php
+         }
+         ?>
+      </ul>
             </div>
         </div>
     </header>
