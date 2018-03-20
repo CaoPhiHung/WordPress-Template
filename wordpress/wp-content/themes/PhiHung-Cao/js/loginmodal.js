@@ -8,7 +8,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
 var signin = document.getElementById("signin");
 if(signin != null){
 signin.addEventListener("click", function(){
@@ -18,15 +17,20 @@ signin.addEventListener("click", function(){
 }
 
 
-
+function closeMenu(){
 var n = document.getElementById('navbar');
 if(n != null){
 var items = n.getElementsByTagName("li");
-for (var i = 0; i < items.length-1; ++i) {
+var button = document.getElementById('buttonExpand');
+console.log(items);
+
+for (var i = 0; i < items.length-2; ++i) {
     // do something with items[i], which is a <li> element
     items[i].addEventListener("click", function(){
         toggle('navbar','buttonExpand');
     });
+}
+
 }
 }
 
@@ -41,7 +45,6 @@ function toggle(id, id2) {
                     items[i].setAttribute('style','display: none;');
                 }
         }
-        
     }else {
         document.getElementById(id2).setAttribute('aria-expanded', 'true');
         for (var i = 0; i < items.length; ++i) {
@@ -50,6 +53,7 @@ function toggle(id, id2) {
                     items[i].setAttribute('style','display: block;');
                 }
         }
+        closeMenu();
     }
   }
 

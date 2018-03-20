@@ -359,6 +359,10 @@ span.psw {
     padding-top: 16px;
 }
 
+.pad-top {
+    padding-top: 15px;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */

@@ -10,8 +10,8 @@
    <div class="img-banner">
       <div class="inner-container">
          <h1>Vancouver Medical College</h1>
-         <h2>Love what you do and do what you love</h2>
-         <h3>Ray Bradbury</h3>
+         <h2><i>"Love what you do and do what you love"</i></h2>
+         <h3><i>Ray Bradbury</i></h3>
       </div>
    </div>
 </header>
