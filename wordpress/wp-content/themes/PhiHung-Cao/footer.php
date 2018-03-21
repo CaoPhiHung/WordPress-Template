@@ -8,8 +8,7 @@
     <?php 
                 wp_nav_menu( array(
                     'theme_location' => 'header_menu',
-                    'menu_class' => 'topnav',
-                    'menu_id' => 'navbar'
+                    'menu_class' => 'footerNav',
                 ) );
             ?>
     </p>

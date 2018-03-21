@@ -12,7 +12,10 @@ var signin = document.getElementById("signin");
 if(signin != null){
 signin.addEventListener("click", function(){
     document.getElementById('id01').style.display='block';
+    var button = document.getElementById('buttonExpand');
+    if(button.getAttribute("aria-expanded") == 'true'){
     toggle('navbar','buttonExpand');
+    }
 });
 }
 
@@ -21,16 +24,12 @@ function closeMenu(){
 var n = document.getElementById('navbar');
 if(n != null){
 var items = n.getElementsByTagName("li");
-var button = document.getElementById('buttonExpand');
-console.log(items);
-
-for (var i = 0; i < items.length-2; ++i) {
+for (var i = 0; i < items.length-1; ++i) {
     // do something with items[i], which is a <li> element
     items[i].addEventListener("click", function(){
         toggle('navbar','buttonExpand');
     });
 }
-
 }
 }
 

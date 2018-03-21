@@ -22,11 +22,12 @@
       <hr >
       <!-- The Modal -->
       <div id="id01" class="modal">
-         <span onclick="document.getElementById('id01').style.display='none'" 
-            class="close" title="Close Modal">&times;</span>
+         
          <!-- Modal Content -->
          <form class="modal-content animate" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
          <input type="hidden" name="action" value="process_form">
+         <span onclick="document.getElementById('id01').style.display='none'" 
+            class="close" title="Close Modal">&times;</span>
             <div class="imgcontainer">
                <img src="<?php echo get_template_directory_uri();?>/img/img_avatar2.png" alt="Avatar" class="avatar">
             </div>
