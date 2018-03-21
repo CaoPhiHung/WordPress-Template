@@ -1,0 +1,79 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: March 21, 2018 3:49 am
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.2.34
+WORDPRESS:	4.9.4
+PHP INFO:	5.6.31 | SAPI: apache2handler
+SERVER:		Apache/2.4.27 (Win64) PHP/5.6.31 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 2048M (128M default) 
+MEMORY STACK: 30.5MB 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP(query limit - 100)
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Not Supported 
+TABLES: total:13 | filtered:0 | create:13 
+FILTERED: [] 
+SQL CREATED: 20180319_vancouvermedicalcollege_9b703690918ced609889180321034917_database.sql 
+SQL FILE SIZE: 457.67KB (468654) 
+SQL FILE TIME: 2018-03-21 03:49:46 
+SQL RUNTIME: 0.32 sec. 
+
+******************************************************************************** 
+ARCHIVE (ZIP): 
+******************************************************************************** 
+ARCHIVE DIR:  C:/Dev/WordPress-Template/wordpress 
+ARCHIVE FILE: 20180319_vancouvermedicalcollege_9b703690918ced609889180321034917_archive.zip 
+FILTERS: *OFF* 
+DIRS:
+	not set 
+FILES:
+	not set 
+EXTS:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	38.46MB 
+STATS:	Dirs 180 | Files 1,660 
+SQL ADDED: 20180319_vancouvermedicalcollege_9b703690918ced609889180321034917_database.sql 
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 1840
+    [filename] => C:\Dev\WordPress-Template\wordpress\wp-snapshots\tmp\20180319_vancouvermedicalcollege_9b703690918ced609889180321034917_archive.zip
+    [comment] => 
+)
+ 
+COMPRESSION RESULT: '1' 
+COMPRESSED SIZE: 20.85MB 
+ARCHIVE RUNTIME: 30.49 sec. 
+MEMORY STACK: 31.25MB 
+
+******************************************************************************** 
+MAKE INSTALLER: 
+******************************************************************************** 
+Build Start 
+Build Finished 
+Preping for use 
+PACK SIZE:  
+Template parsed with new data 
+Complete [C:/Dev/WordPress-Template/wordpress/wp-snapshots/tmp/20180319_vancouvermedicalcollege_9b703690918ced609889180321034917_installer.php] 
+Added to archive 
+
+******************************************************************************** 
+INTEGRITY CHECKS: 
+******************************************************************************** 
+SQL File: 457.67KB 
+Installer File: 445.38KB 
+Archive File: 20.85MB  
+
+********************************************************************************
+RECORD ID:[3]
+TOTAL PROCESS RUNTIME: 37.12 sec.
+PEAK PHP MEMORY USED: 33.75MB
+DONE PROCESSING => 20180319_vancouvermedicalcollege March 21, 2018 3:50 am
+ 
