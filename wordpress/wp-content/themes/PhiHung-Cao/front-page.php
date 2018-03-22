@@ -96,7 +96,7 @@
          <!-- content container -->
       </div>
       <!-- services page -->
-   </div>
+</div>
    <!-- div class 4 close -->
 </div>
 <!-- div row 2 end -->

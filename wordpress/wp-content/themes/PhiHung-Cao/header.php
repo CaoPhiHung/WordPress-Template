@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Vancouver Meidical College</title>
     <link rel="stylesheet" href= "<?php echo get_template_directory_uri();?>/style.css">
+    <link rel="stylesheet" href= "<?php echo get_template_directory_uri();?>/css/animation.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="<?php echo get_template_directory_uri();?>/js/loginmodal.js"></script>
     <script src="<?php echo get_template_directory_uri();?>/js/aria-menu.js"></script>
@@ -20,6 +21,7 @@
 
 <BODY>
     <header>
+        <base href="<?php echo home_url(); ?>/">
         <!-- using containt id for this(change) -->
         <div class="container" style="position: fixed; width:98%; z-index: 1999; padding-top: 0px">
             
@@ -27,16 +29,19 @@
             <a role="button" aria-expanded="false" href="#" id="buttonExpand" class="icon" onclick="toggle('navbar','buttonExpand')">&#9776;</a>
             <ul id="navbar">
          <li>
-            <a href="#home">Home</a>
+            <a href="<?php echo home_url(); ?>/#home">Home</a>
          </li>
          <li>
-            <a href="#mission">Mission</a>
+            <a href="<?php echo home_url(); ?>/#mission">Mission</a>
          </li>
          <li>
-            <a href="#staff">Staff</a>
+            <a href="<?php echo home_url(); ?>/#staff">Staff</a>
          </li>
          <li>
-            <a href="#services">Service</a>
+            <a href="<?php echo home_url(); ?>/#services">Service</a>
+         </li>
+         <li>
+            <a href="<?php echo home_url(); ?>/all-posts">All Posts</a>
          </li>
          <?php
          if(is_user_logged_in()) {

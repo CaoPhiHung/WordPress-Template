@@ -367,6 +367,14 @@ span.psw {
     color: #92999f;
 }
 
+.hidden{
+	opacity: 0;
+}
+
+.visible{
+	opacity: 1;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
