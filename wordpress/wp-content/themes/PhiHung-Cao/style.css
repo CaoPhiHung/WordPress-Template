@@ -367,12 +367,16 @@ span.psw {
     color: #92999f;
 }
 
-.hidden{
-	opacity: 0;
-}
-
-.visible{
-	opacity: 1;
+.error {
+    padding: 1em;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    color: #b94a48;
+    background-color: #f2dede;
+    border: 1px solid rgba(185, 74, 72, 0.3);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 /* The Modal (background) */
@@ -405,7 +409,7 @@ span.psw {
     color: #000;
     font-size: 35px;
     font-weight: bold;
-    margin-top: -12px;
+    /* margin-top: -12px; */
 }
 
 .close:hover,

@@ -1,35 +1,4 @@
 <?php
-
-// function ajax_login_init(){
-
-//     wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery') ); 
-//     wp_enqueue_script('ajax-login-script');
-
-//     wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
-//         'ajaxurl' => admin_url( 'admin-ajax.php' ),
-//         'redirecturl' => home_url(),
-//         'loadingmessage' => __('Sending user info, please wait...')
-//     ));
-
-//     // Enable the user with no privileges to run ajax_login() in AJAX
-//     add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
-// }
-
-// // Execute the action only if the user isn't logged in
-// if (!is_user_logged_in()) {
-//     add_action('init', 'ajax_login_init');
-// }
-
-// function ajax_login(){
-
-//     // First check the nonce, if it fails the function will break
-//     check_ajax_referer( 'ajax-login-nonce', 'security' );
-
-//     // Nonce is checked, get the POST data and sign user on
-
-
-//     die();
-// }
 add_action( 'admin_post_nopriv_process_form', 'process_form_data' );
 add_action( 'admin_post_process_form', 'process_form_data' );
 function process_form_data() {
@@ -40,19 +9,17 @@ function process_form_data() {
     $info['remember'] = true;
 
     $user_signon = wp_signon( $info, false );
-    // var_dump($user_signon);
     if ( is_wp_error($user_signon) ){
-        echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.')));
+        http_response_code(403);
+        echo "Wrong username or password.";
     } else {
         echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...')));
+        setcookie( 'username', $_POST['username'], time() + 3600, '/');
+        wp_redirect( home_url());
+        exit;
     }
-    // var_dump(home_url());
-    // wp_redirect( home_url() ); 
-
-    // exit;
-    setcookie( 'username', $_POST['username'], time() + 3600, '/');
-    wp_redirect( home_url());
-    exit;
+    
+    
 }
 
 function theme_init(){
@@ -72,53 +39,53 @@ add_action('wp_enqueue_scripts', 'print_script');
 
 //add custom post type
 // Our custom post type function
-function create_posttype() {
+// function create_posttype() {
  
-    register_post_type( 'movies',
-    // CPT Options
-        array(
-            'labels' => array(
-                'name' => __( 'Movies' ),
-                'singular_name' => __( 'Movie' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'movies'),
-        )
-    );
-}
-// Hooking up our function to theme setup
-add_action( 'init', 'create_posttype' );
+//     register_post_type( 'course',
+//     // CPT Options
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Course' ),
+//                 'singular_name' => __( 'Couse' )
+//             ),
+//             'public' => true,
+//             'has_archive' => true,
+//             'rewrite' => array('slug' => 'course'),
+//         )
+//     );
+// }
+// // Hooking up our function to theme setup
+// add_action( 'init', 'create_posttype' );
 
 function custom_post_type() {
  
     // Set UI labels for Custom Post Type
         $labels = array(
-            'name'                => _x( 'Movies', 'Post Type General Name', 'twentythirteen' ),
-            'singular_name'       => _x( 'Movie', 'Post Type Singular Name', 'twentythirteen' ),
-            'menu_name'           => __( 'Movies', 'twentythirteen' ),
-            'parent_item_colon'   => __( 'Parent Movie', 'twentythirteen' ),
-            'all_items'           => __( 'All Movies', 'twentythirteen' ),
-            'view_item'           => __( 'View Movie', 'twentythirteen' ),
-            'add_new_item'        => __( 'Add New Movie', 'twentythirteen' ),
-            'add_new'             => __( 'Add New', 'twentythirteen' ),
-            'edit_item'           => __( 'Edit Movie', 'twentythirteen' ),
-            'update_item'         => __( 'Update Movie', 'twentythirteen' ),
-            'search_items'        => __( 'Search Movie', 'twentythirteen' ),
-            'not_found'           => __( 'Not Found', 'twentythirteen' ),
-            'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+            'name'                => _x( 'Courses', 'Post Type General Name', 'PhiHung-Cao' ),
+            'singular_name'       => _x( 'Course', 'Post Type Singular Name', 'PhiHung-Cao' ),
+            'menu_name'           => __( 'Courses', 'PhiHung-Cao' ),
+            'parent_item_colon'   => __( 'Parent Course', 'PhiHung-Cao' ),
+            'all_items'           => __( 'All Courses', 'PhiHung-Cao' ),
+            'view_item'           => __( 'View Course', 'PhiHung-Cao' ),
+            'add_new_item'        => __( 'Add New Course', 'PhiHung-Cao' ),
+            'add_new'             => __( 'Add New', 'PhiHung-Cao' ),
+            'edit_item'           => __( 'Edit Course', 'PhiHung-Cao' ),
+            'update_item'         => __( 'Update Course', 'PhiHung-Cao' ),
+            'search_items'        => __( 'Search Course', 'PhiHung-Cao' ),
+            'not_found'           => __( 'Not Found', 'PhiHung-Cao' ),
+            'not_found_in_trash'  => __( 'Not found in Trash', 'PhiHung-Cao' ),
         );
          
     // Set other options for Custom Post Type
          
         $args = array(
-            'label'               => __( 'movies', 'twentythirteen' ),
-            'description'         => __( 'Movie news and reviews', 'twentythirteen' ),
+            'label'               => __( 'Courses', 'PhiHung-Cao' ),
+            'description'         => __( 'Course news and reviews', 'PhiHung-Cao' ),
             'labels'              => $labels,
             // Features this CPT supports in Post Editor
             'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions'),
             // You can associate this CPT with a taxonomy or custom taxonomy. 
-            'taxonomies'          => array( 'genres' ),
+            'taxonomies'          => array( 'location' ),
             /* A hierarchical CPT is like Pages and can have
             * Parent and child items. A non-hierarchical CPT
             * is like Posts.
@@ -138,7 +105,7 @@ function custom_post_type() {
         );
          
         // Registering your Custom Post Type
-        register_post_type( 'movies', $args );
+        register_post_type( 'Courses', $args );
      
     }
      
@@ -149,4 +116,40 @@ function custom_post_type() {
      
 add_action( 'init', 'custom_post_type', 0 );
 
+
+/**
+ * Add custom taxonomies
+ *
+ * Additional custom taxonomies can be defined here
+ * http://codex.wordpress.org/Function_Reference/register_taxonomy
+ */
+function add_custom_taxonomies() {
+    // Add new "Locations" taxonomy to Posts
+    register_taxonomy('location', 'courses', array(
+      // Hierarchical taxonomy (like categories)
+      'hierarchical' => true,
+      // This array of options controls the labels displayed in the WordPress Admin UI
+      'labels' => array(
+        'name' => _x( 'Locations', 'taxonomy general name' ),
+        'singular_name' => _x( 'Location', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search Locations' ),
+        'all_items' => __( 'All Locations' ),
+        'parent_item' => __( 'Parent Location' ),
+        'parent_item_colon' => __( 'Parent Location:' ),
+        'edit_item' => __( 'Edit Location' ),
+        'update_item' => __( 'Update Location' ),
+        'add_new_item' => __( 'Add New Location' ),
+        'new_item_name' => __( 'New Location Name' ),
+        'menu_name' => __( 'Locations' ),
+      ),
+
+      // Control the slugs used for this taxonomy
+      'rewrite' => array(
+        'slug' => 'locations', // This controls the base slug that will display before each term
+        'with_front' => false, // Don't display the category base before "/locations/"
+        'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+      ),
+    ));
+  }
+  add_action( 'init', 'add_custom_taxonomies', 0 );
 ?>

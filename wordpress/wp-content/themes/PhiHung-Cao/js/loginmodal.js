@@ -18,6 +18,11 @@ signin.addEventListener("click", function(){
     }
 });
 }
+console.log('Width:  ' +  getWidth() );
+// console.log(document.getElementById('buttonExpand'));
+// if(getWidth() <= 630){
+closeMenu();
+// }
 
 
 function closeMenu(){
@@ -26,12 +31,34 @@ if(n != null){
 var items = n.getElementsByTagName("li");
 for (var i = 0; i < items.length-1; ++i) {
     // do something with items[i], which is a <li> element
+    if(getWidth() <= 700){
     items[i].addEventListener("click", function(){
         toggle('navbar','buttonExpand');
     });
+   }
 }
 }
 }
+
+function getWidth() {
+    return Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.documentElement.clientWidth
+    );
+  }
+  
+  function getHeight() {
+    return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.documentElement.clientHeight
+    );
+  }
 
 function toggle(id, id2) {
     var n = document.getElementById(id);
@@ -44,6 +71,7 @@ function toggle(id, id2) {
                     items[i].setAttribute('style','display: none;');
                 }
         }
+        console.log("open");
     }else {
         document.getElementById(id2).setAttribute('aria-expanded', 'true');
         for (var i = 0; i < items.length; ++i) {
@@ -52,7 +80,7 @@ function toggle(id, id2) {
                     items[i].setAttribute('style','display: block;');
                 }
         }
-        closeMenu();
+        console.log("close");
     }
   }
 

@@ -1,66 +1,13 @@
-<?php get_header(); ?>
-<div class="container">
-<header role="banner">
-   <div class="img-banner">
-      <div class="inner-container">
-         <h1>Vancouver Medical College</h1>
-         <h2><i>"Love what you do and do what you love"</i></h2>
-         <h3><i>Ray Bradbury</i></h3>
-      </div>
-   </div>
-</header>
-<div class="row">
-   <!-- div class 2 close -->
-   <div class="four">
-      <!-- <h1>Vancouver Medical College</h1> -->
-      <hr >
-      <!-- The Modal -->
-      <div id="id01" class="modal">
-         
-         <!-- Modal Content -->
-         <form class="modal-content animate" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-         <input type="hidden" name="action" value="process_form">
-         <span onclick="document.getElementById('id01').style.display='none'" 
-            class="close" title="Close Modal">&times;</span>
-            <div class="imgcontainer">
-               <img src="<?php echo get_template_directory_uri();?>/img/img_avatar2.png" alt="Avatar" class="avatar">
-            </div>
-            <div style="padding: 16px;">
-               <label for="uname"><b>Username</b></label>
-               <input type="text" placeholder="Enter Username" name="username" required>
-               <label for="psw"><b>Password</b></label>
-               <input type="password" placeholder="Enter Password" name="password" required>
-               <button type="submit">Login</button>
-            </div>
-         </form>
-      </div>
-      <div class="slideshow-container" id="home">
-         <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="<?php echo get_template_directory_uri();?>/img/img_nature_wide.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
-         </div>
-         <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="<?php echo get_template_directory_uri();?>/img/img_fjords_wide.jpg" style="width:100%">
-            <div class="text">Caption Two</div>
-         </div>
-         <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="<?php echo get_template_directory_uri();?>/img/img_mountains_wide.jpg" style="width:100%">
-            <div class="text">Caption Three</div>
-         </div>
-      </div>
-      <br>
-      <div style="text-align:center">
-         <span class="dot"></span> 
-         <span class="dot"></span> 
-         <span class="dot"></span> 
-      </div>
-
+<?php get_header(); ?>      
       <?php 
+            $pagename = get_query_var('pagename');
+            
+            //all post page only
+            if($pagename == "all-posts"){
             // the query
-            $wpb_all_query = new WP_Query(array('post_type'=>'movies', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+            ?><div><h2>Course Type Post<h2></div><?php
+            
+            $wpb_all_query = new WP_Query(array('post_type'=>'courses', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
             <?php if ( $wpb_all_query->have_posts() ) : ?>
             
             
@@ -76,10 +23,9 @@
             <?php else : ?>
             <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
             <?php endif; ?>
-      </div>
-
-      <?php 
+            <?php 
             // the query
+            ?><hr><div><h2>Normal Type Post<h2></div><?php
             $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
             <?php if ( $wpb_all_query->have_posts() ) : ?>
             
@@ -96,17 +42,52 @@
             <?php else : ?>
             <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
             <?php endif; ?>
+
+            <?php
+            
+            $locations_query = new WP_Query( array(
+            'post_type' => 'courses',
+            'posts_per_page' => 10,
+            'tax_query' => array(
+            array(
+                  'taxonomy' => 'location',
+                  'field' => 'slug',
+                  'terms' => 'douglas-college'
+            )
+            )
+            ) );
+            // Display the custom loop
+            if ( $locations_query->have_posts() ): ?>
+            <h2>Courses in Douglas College</h2>
+            <ul class="postlist">
+            <?php while ( $locations_query->have_posts() ) : $locations_query->the_post(); ?>
+            <li><span class="date"><?php the_time(get_option('date_format')); ?></span> – <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+            <?php endwhile; wp_reset_postdata(); ?>
+            </ul><!--// end .postlist -->
+            <?php endif; ?>
+
+           <?php } else {?>
+           <!-- other pages -->
+           <?php
+			while ( have_posts() ) : the_post();
+
+                  get_template_part( 'content', get_post_format() );
+
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+			endwhile; // End of the loop.
+            }
+            ?>
+
+                 
+      </div>
    </div>
-
-
-
-
    <!-- div class 4 close -->
 </div>
 <!-- div row 2 end -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
-<script src="<?php echo get_template_directory_uri();?>/js/viewportchecker.js"></script> 
 
 </script>
 <?php
