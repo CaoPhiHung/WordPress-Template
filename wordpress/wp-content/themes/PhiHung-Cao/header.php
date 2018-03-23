@@ -95,7 +95,7 @@
             class="close" title="Close Modal" style="z-index: 3000; width: 4px; padding-right: 20px; height: 43px;
                   padding-left: 0px; padding-top: 0px; background-color: white;">&times;</button>
             <div class="imgcontainer">
-               <img src="<?php echo get_template_directory_uri();?>/img/img_avatar2.png" alt="Avatar" class="avatar">
+               <img src="<?php echo get_template_directory_uri();?>/img/avatar.png" alt="Avatar" class="avatar">
             </div>
             <div id="form-messages"></div>
             <div style="padding: 16px;">
@@ -109,19 +109,13 @@
       </div>
       <div class="slideshow-container" id="home">
          <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="<?php echo get_template_directory_uri();?>/img/img_nature_wide.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
+            <img src="<?php echo get_template_directory_uri();?>/img/img1.jpg" alt="Medical school slider image 1" style="width:100%">
          </div>
          <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="<?php echo get_template_directory_uri();?>/img/img_fjords_wide.jpg" style="width:100%">
-            <div class="text">Caption Two</div>
+            <img src="<?php echo get_template_directory_uri();?>/img/img2.jpg" alt="Medical school slider image 2"  style="width:100%">
          </div>
          <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="<?php echo get_template_directory_uri();?>/img/img_mountains_wide.jpg" style="width:100%">
-            <div class="text">Caption Three</div>
+            <img src="<?php echo get_template_directory_uri();?>/img/img3.jpg" alt="Medical school slider image 3"  style="width:100%">
          </div>
       </div>
       <br>
