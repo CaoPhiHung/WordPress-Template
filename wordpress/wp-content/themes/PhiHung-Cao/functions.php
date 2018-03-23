@@ -152,4 +152,16 @@ function add_custom_taxonomies() {
     ));
   }
   add_action( 'init', 'add_custom_taxonomies', 0 );
+
+  function custom_header_setup(){
+      add_theme_support( 'custom-header', array(
+        'default-image' => '',
+        'default-text-color' => '00000',
+        'width' => 1140,
+        'height' => 641,
+        'flex-height' => true,
+        'video' => true,
+      ) );
+  }
+  add_action( 'init', 'custom_header_setup', 0 );
 ?>

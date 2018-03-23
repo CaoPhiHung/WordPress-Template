@@ -1,4 +1,3 @@
-
 // Get the modal
 var modal = document.getElementById('id01');
 
@@ -18,11 +17,10 @@ signin.addEventListener("click", function(){
     }
 });
 }
-console.log('Width:  ' +  getWidth() );
-// console.log(document.getElementById('buttonExpand'));
-// if(getWidth() <= 630){
+
+if(getWidth() <= 730){
 closeMenu();
-// }
+}
 
 
 function closeMenu(){
@@ -41,6 +39,7 @@ for (var i = 0; i < items.length-1; ++i) {
 }
 
 function getWidth() {
+    if(document != null && document.body != null && document.documentElement != null){
     return Math.max(
       document.body.scrollWidth,
       document.documentElement.scrollWidth,
@@ -48,6 +47,8 @@ function getWidth() {
       document.documentElement.offsetWidth,
       document.documentElement.clientWidth
     );
+    }
+    return 1140;
   }
   
   function getHeight() {

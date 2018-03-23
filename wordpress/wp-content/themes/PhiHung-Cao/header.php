@@ -43,6 +43,12 @@
          <li>
             <a href="<?php echo home_url(); ?>/all-posts">All Posts</a>
          </li>
+         <li>
+            <a href="<?php echo home_url(); ?>/documentation">Documentations</a>
+         </li>
+         <li>
+            <a href="<?php echo home_url(); ?>/references">References</a>
+         </li>
          <?php
          if(is_user_logged_in()) {
              ?>
@@ -65,6 +71,7 @@
     </header>
     <div class="container">
 <header role="banner">
+    <?php the_custom_header_markup(); ?>
    <div class="img-banner">
       <div class="inner-container">
          <h1>Vancouver Medical College</h1>

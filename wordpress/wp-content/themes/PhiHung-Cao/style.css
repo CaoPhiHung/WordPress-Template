@@ -378,7 +378,13 @@ span.psw {
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
-
+#wp-custom-header-video{
+    height: auto;
+    width: 100%;
+}
+#wp-custom-header-video-button{
+    width: 100px;
+}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
