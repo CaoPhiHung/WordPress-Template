@@ -44,27 +44,16 @@
             <?php endif; ?>
 
             <?php
-            
-            $locations_query = new WP_Query( array(
-            'post_type' => 'courses',
-            'posts_per_page' => 10,
-            'tax_query' => array(
-            array(
+            $terms = get_terms([
                   'taxonomy' => 'location',
-                  'field' => 'slug',
-                  'terms' => 'douglas-college'
-            )
-            )
-            ) );
-            // Display the custom loop
-            if ( $locations_query->have_posts() ): ?>
-            <h2>Courses in Douglas College</h2>
-            <ul class="postlist">
-            <?php while ( $locations_query->have_posts() ) : $locations_query->the_post(); ?>
-            <li><span class="date"><?php the_time(get_option('date_format')); ?></span> – <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
-            <?php endwhile; wp_reset_postdata(); ?>
-            </ul><!--// end .postlist -->
-            <?php endif; ?>
+                  'hide_empty' => false,
+              ]);
+            foreach($terms as $term){
+                  // var_dump($term);
+                  show_custom_location_taxonomy($term);
+            }
+            ?>
+            
 
            <?php } else {?>
            <!-- other pages -->
@@ -80,9 +69,33 @@
 
 			endwhile; // End of the loop.
             }
+            
+            function show_custom_location_taxonomy($term){ 
+                  
+                  $locations_query = new WP_Query( array(
+                        'post_type' => 'courses',
+                        'posts_per_page' => 10,
+                        'tax_query' => array(
+                        array(
+                              'taxonomy' => 'location',
+                              'field' => 'id',
+                              'terms' => $term->term_id
+                        )
+                        )
+                        ) );
+                        // Display the custom loop
+                        if ( $locations_query->have_posts() ): ?>
+            
+                        <h2>Courses in <?php echo $term->name; ?></h2>
+                        <ul class="postlist">
+                        <?php while ( $locations_query->have_posts() ) : $locations_query->the_post(); ?>
+                        <li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a> – <span class="date"><?php the_time(get_option('date_format')); ?></span>  </li>
+                        <?php endwhile; wp_reset_postdata(); ?>
+                        </ul><!--// end .postlist -->
+                        <?php endif; ?>
+           <?php }
             ?>
-
-                 
+            
       </div>
    </div>
    <!-- div class 4 close -->

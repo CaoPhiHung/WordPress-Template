@@ -19,8 +19,8 @@
  
      <div id="post-<?php the_ID(); ?>" <?php post_class('post clearfix'); ?>>
        <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-       <div class="content clearfix">
-         <div class="post-info">
+       <div>
+         <div style="text-align: center">
            <p><?php the_time(get_option('date_format')); ?> by <?php the_author_posts_link(); ?></p>
          </div><!--// end .post-info -->
          <div class="entry">
