@@ -1,6 +1,5 @@
 <?php
-add_action( 'admin_post_nopriv_process_form', 'process_form_data' );
-add_action( 'admin_post_process_form', 'process_form_data' );
+
 function process_form_data() {
   // form processing code here
     $info = array();
@@ -13,56 +12,45 @@ function process_form_data() {
         http_response_code(403);
         echo "Wrong username or password.";
     } else {
-        echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...')));
+        echo "Login successful, redirecting...";
         setcookie( 'username', $_POST['username'], time() + 3600, '/');
-        wp_redirect( home_url());
+        wp_redirect( home_url()); // redirect to home page
         exit;
     }
-    
-    
 }
 
+//hook function process_form_data into admin_post_$action
+//it allow us a handle for Post or Get request
+add_action( 'admin_post_nopriv_process_form', 'process_form_data' );
+add_action( 'admin_post_process_form', 'process_form_data' );
+
+//register menus theme and add custom footer menu
 function theme_init(){
     register_nav_menus( array(
-        'header_menu' => 'Header menu',
         'footer_menu' => 'My Custom Footer Menu',
     ) );
 
 }
+/* hook function theme_init into init*/
 add_action('init', 'theme_init');
 
-
+/* register the script and enqueues */
 function print_script(){
+    /* wp_enqueue_script( string $handle, string $src = '', array $deps = array(), 
+    string|bool|null $ver = false, bool $in_footer = false ) */
     wp_enqueue_script('custom', get_template_directory_uri() . '/js/slideshow.js', array(), false, true);
 }
+/* hook function print_script into the wp_enqueue_scripts function */
 add_action('wp_enqueue_scripts', 'print_script');
 
 //add custom post type
-// Our custom post type function
-// function create_posttype() {
- 
-//     register_post_type( 'course',
-//     // CPT Options
-//         array(
-//             'labels' => array(
-//                 'name' => __( 'Course' ),
-//                 'singular_name' => __( 'Couse' )
-//             ),
-//             'public' => true,
-//             'has_archive' => true,
-//             'rewrite' => array('slug' => 'course'),
-//         )
-//     );
-// }
-// // Hooking up our function to theme setup
-// add_action( 'init', 'create_posttype' );
-
+//register custom post type
 function custom_post_type() {
  
     // Set UI labels for Custom Post Type
         $labels = array(
-            'name'                => _x( 'Courses', 'Post Type General Name', 'PhiHung-Cao' ),
-            'singular_name'       => _x( 'Course', 'Post Type Singular Name', 'PhiHung-Cao' ),
+            'name'                => __( 'Courses', 'Post Type General Name', 'PhiHung-Cao' ),
+            'singular_name'       => __( 'Course', 'Post Type Singular Name', 'PhiHung-Cao' ),
             'menu_name'           => __( 'Courses', 'PhiHung-Cao' ),
             'parent_item_colon'   => __( 'Parent Course', 'PhiHung-Cao' ),
             'all_items'           => __( 'All Courses', 'PhiHung-Cao' ),
@@ -82,12 +70,13 @@ function custom_post_type() {
             'label'               => __( 'Courses', 'PhiHung-Cao' ),
             'description'         => __( 'Course news and reviews', 'PhiHung-Cao' ),
             'labels'              => $labels,
-            // Features this CPT supports in Post Editor
+            // Features of custom post type supports in Post Editor
             'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions'),
-            // You can associate this CPT with a taxonomy or custom taxonomy. 
+            // You can associate this custom post type with a taxonomy or custom taxonomy. 
+            // Here i associate with custom taxonomy location
             'taxonomies'          => array( 'location' ),
-            /* A hierarchical CPT is like Pages and can have
-            * Parent and child items. A non-hierarchical CPT
+            /* A hierarchical custom post type is like Pages and can have
+            * Parent and child items. A non-hierarchical custom post type
             * is like Posts.
             */ 
             'hierarchical'        => false,
@@ -109,19 +98,13 @@ function custom_post_type() {
      
     }
      
-    /* Hook into the 'init' action so that the function
-    * Containing our post type registration is not 
-    * unnecessarily executed. 
-    */
+    /* Hook into the 'init' action so that the function*/
      
-add_action( 'init', 'custom_post_type', 0 );
+add_action( 'init', 'custom_post_type');
 
 
-/**
+/*
  * Add custom taxonomies
- *
- * Additional custom taxonomies can be defined here
- * http://codex.wordpress.org/Function_Reference/register_taxonomy
  */
 function add_custom_taxonomies() {
     // Add new "Locations" taxonomy to Posts
@@ -129,6 +112,7 @@ function add_custom_taxonomies() {
       // Hierarchical taxonomy (like categories)
       'hierarchical' => true,
       // This array of options controls the labels displayed in the WordPress Admin UI
+      //_x function mean: location can be translate to taxonomy gernral name
       'labels' => array(
         'name' => _x( 'Locations', 'taxonomy general name' ),
         'singular_name' => _x( 'Location', 'taxonomy singular name' ),
@@ -151,17 +135,22 @@ function add_custom_taxonomies() {
       ),
     ));
   }
-  add_action( 'init', 'add_custom_taxonomies', 0 );
 
+  /* hook function add_custon_taxonomies into init action */
+  add_action( 'init', 'add_custom_taxonomies');
+
+  /* custom header */
   function custom_header_setup(){
       add_theme_support( 'custom-header', array(
         'default-image' => '',
         'default-text-color' => '00000',
-        'width' => 1140,
-        'height' => 641,
+        'width' => 1140, // set default video width
+        'height' => 641, // set defaul video height
         'flex-height' => true,
-        'video' => true,
+        'video' => true, //show header video media
       ) );
   }
+
+  /* hook function custom_header_setup into init action */
   add_action( 'init', 'custom_header_setup', 0 );
 ?>
