@@ -3,15 +3,30 @@ Theme Name: PhiHung-Cao
 Author: Phi Hung Cao
 Description: Template build from scratch
 Version: 0.0.1
-Tags: html, css, jquery,...
+Tags: html, advanced css, jquery, css grid, animation ,....
 */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Roboto+Slab:400,100,300,700);
 
-/** container **/
-/** for device below 768px */
-.container{
+/** grid container **/
+.grid-container{
     width: 100%;
+    display: grid;
+    grid-gap: 10px;
   }
+
+.grid-header {
+    grid-column: 1;
+    grid-row: 1;
+}
+.grid-main-content {
+    grid-column: 1;
+    grid-row: 2;
+}
+.grid-footer {
+    grid-column: 1;
+    grid-row: 3;
+}
+
   .row{
     margin-left: -15px;
     margin-right: -15px;
@@ -33,14 +48,14 @@ Tags: html, css, jquery,...
 
   /** for device 768px - 991px */
     @media (min-width: 768px){
-        .container{
+        .grid-container{
         width: 750px
         }
     }
 
     /** for device 992px - 1199px */
     @media (min-width: 992px){
-    .container{
+    .grid-container{
     width: 800px;
     }
     .col-6{
@@ -53,14 +68,14 @@ Tags: html, css, jquery,...
 
     /** for device larger than 1200px */
     @media (min-width: 1200px){
-        .container{
+        .grid-container{
             width: 1024px;
         }
     }
 
     /** for device larger than 1300px */
     @media (min-width: 1300px){
-        .container{
+        .grid-container{
             width: 1280px;
         }
     }
@@ -349,7 +364,7 @@ img.avatar {
     border-radius: 50%;
 }
 
-.container {
+.grid-container {
     padding: 16px;
     padding-top: 70px;
 }
@@ -385,6 +400,11 @@ span.psw {
 #wp-custom-header-video-button{
     width: 100px;
 }
+
+#wp-a11y-speak-polite{
+    display: none;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -463,7 +483,6 @@ span.psw {
 /* banner text animation */
 .inner-container{
     text-align: left;
-    position: absolute;
     width: 100%;
     color: brown;
     height:auto;
@@ -566,3 +585,10 @@ span.psw {
     width: 98%;
   }
 
+    .blog-post-title{
+        text-align: center;
+    }
+
+    .blog-post-meta{
+        text-align: center; 
+    }

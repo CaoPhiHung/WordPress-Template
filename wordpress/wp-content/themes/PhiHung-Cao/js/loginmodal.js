@@ -18,7 +18,7 @@ signin.addEventListener("click", function(){
 });
 }
 
-if(getWidth() <= 730){
+if(getWidth() <= 1300){
 closeMenu();
 }
 

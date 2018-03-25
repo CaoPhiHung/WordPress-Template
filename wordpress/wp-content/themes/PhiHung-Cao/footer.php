@@ -1,3 +1,5 @@
+</div>
+<div class="grid-footer">
 <footer class="footer-distributed">
 
 <div class="footer-left">
@@ -55,6 +57,7 @@
 </div>
 
 </footer>
+</div>
     <script src="<?php echo get_template_directory_uri();?>/js/loginmodal.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8cKAF3Kp4eX4dGebz8iwax3Z33pvC9cQ&callback=initMap"
   type="text/javascript"></script>
