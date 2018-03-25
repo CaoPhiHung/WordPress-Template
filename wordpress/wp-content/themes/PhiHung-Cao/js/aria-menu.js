@@ -7,7 +7,7 @@ $(document).ready(function(){
     $(document).keydown(function(e){
         var focusedItem = $(document.activeElement);
         switch(e.which){
-            case 39:
+            case 39: //right arrow
             case 40: //down arrow
             e.preventDefault();
                 $('#navbar > li').find("a").each(function(index) {
@@ -23,7 +23,7 @@ $(document).ready(function(){
                 
             break;
             
-            case 37:
+            case 37: // left arrow
             case 38: // up arrow
             e.preventDefault();
             $('#navbar > li').find("a").each(function(index) {
@@ -37,27 +37,6 @@ $(document).ready(function(){
                 }                 
              })
             break;
-
-            // case 32:// space
-            // if(menuButton1.is(':focus')){
-            //     e.preventDefault();
-            //     menuButton1.click();
-            // }
-            // break;
-
-            // case 9: // tab
-            // if(menuButton1.is(':focus')){
-            //     e.preventDefault();
-            //     menuButton1.click();
-            // }
-            // break;
-
-            // case 13: // enter
-            // if(menuButton1.is(':focus')){
-            //     e.preventDefault();
-            //     menuButton1.click();
-            // }
-            // break;
         };
     });
 

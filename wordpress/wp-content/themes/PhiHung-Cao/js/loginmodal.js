@@ -72,7 +72,6 @@ function toggle(id, id2) {
                     items[i].setAttribute('style','display: none;');
                 }
         }
-        console.log("open");
     }else {
         document.getElementById(id2).setAttribute('aria-expanded', 'true');
         for (var i = 0; i < items.length; ++i) {
@@ -81,7 +80,6 @@ function toggle(id, id2) {
                     items[i].setAttribute('style','display: block;');
                 }
         }
-        console.log("close");
     }
   }
 

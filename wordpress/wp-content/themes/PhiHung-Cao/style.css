@@ -487,19 +487,23 @@ span.psw {
     color: brown;
     height:auto;
     padding: 5%;
+    /* chrome */ 
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 3s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
+    /* firefox */ 
     -moz-animation-name: fadeIn;
     -moz-animation-duration: 3s;
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
-    animation-name: fadeIn;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    /* common browser */
+    animation-name: fadeIn; /* animation name */
+    animation-duration: 3s; /* duration of animation */
+    animation-timing-function: linear; /* play animation same speed */
+    animation-iteration-count: infinite; /* looping the animation*/
 }
+/* using keyframes to set opacity from beginning to the end (0% -> 100%) */
 @keyframes fadeIn {
     0% {
         opacity: 1.0;
@@ -578,6 +582,7 @@ span.psw {
         padding-top: 15%
     }
   }
+
   /* sticky header */
   .sticky {
     position: fixed;
@@ -585,10 +590,10 @@ span.psw {
     width: 98%;
   }
 
-    .blog-post-title{
-        text-align: center;
-    }
+.blog-post-title{
+    text-align: center;
+}
 
-    .blog-post-meta{
-        text-align: center; 
-    }
+.blog-post-meta{
+    text-align: center; 
+}
