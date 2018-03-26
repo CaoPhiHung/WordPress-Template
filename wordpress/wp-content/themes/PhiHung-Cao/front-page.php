@@ -1,11 +1,21 @@
 <?php
 
  get_header(); 
- $service_page = get_page_by_title( 'Services' );
+ $service_page = get_page_by_title( 'Our Program' );
  $staff_page = get_page_by_title( 'Our Staff' );
- $mission_page = get_page_by_title( 'Mission' );
+ $mission_page = get_page_by_title( 'Our Mission' );
+ $about_us_page = get_page_by_title( 'About-us' );
 ?>
-
+      <div class="page" id="about-us">
+         <div class="pad-top">
+            <div class="row">
+               <?php echo apply_filters('the_content', $about_us_page->post_content); ?>
+            </div>
+            <!-- row -->
+         </div>
+         <!-- content container -->
+      </div>
+      <!-- end mission page -->
       <div class="page" id="mission">
          <div class="pad-top">
             <h2 class="content"><?php echo $mission_page->post_title; ?></h2>

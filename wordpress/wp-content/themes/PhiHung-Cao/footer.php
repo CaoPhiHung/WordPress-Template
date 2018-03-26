@@ -42,7 +42,8 @@
 
     <p class="footer-company-about">
         <span>About the College</span>
-        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        The College of Vancouver regulates the practice of medicine under the authority of provincial law. 
+        All physicians who practise medicine in the province must be registrants of the College.
     </p>
 
     <div class="footer-icons">

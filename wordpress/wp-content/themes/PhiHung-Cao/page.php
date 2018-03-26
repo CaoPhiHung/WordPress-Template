@@ -1,11 +1,13 @@
-<?php get_header(); ?>      
+<?php get_header(); ?>
+    
       <?php 
             $pagename = get_query_var('pagename');
             
             //all post page only
             if($pagename == "all-posts"){
             // the query
-            ?><div><h2>Course Type Post<h2></div><?php
+            
+            ?><div><h2>Coop Course with other institution<h2></div><?php
             
             $wpb_all_query = new WP_Query(array('post_type'=>'courses', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
             <?php if ( $wpb_all_query->have_posts() ) : ?>
@@ -25,7 +27,7 @@
             <?php endif; ?>
             <?php 
             // the query
-            ?><hr><div><h2>Normal Type Post<h2></div><?php
+            ?><hr><div><h2>Other Course<h2></div><?php
             $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
             <?php if ( $wpb_all_query->have_posts() ) : ?>
             
@@ -86,7 +88,7 @@
                         // Display the custom loop
                         if ( $locations_query->have_posts() ): ?>
             
-                        <h2>Courses in <?php echo $term->name; ?></h2>
+                        <h2>Courses opened in <?php echo $term->name; ?></h2>
                         <ul class="postlist">
                         <?php while ( $locations_query->have_posts() ) : $locations_query->the_post(); ?>
                         <li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a> – <span class="date"><?php the_time(get_option('date_format')); ?></span>  </li>

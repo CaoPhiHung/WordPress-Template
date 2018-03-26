@@ -85,13 +85,13 @@ function toggle(id, id2) {
 
 //   google map
   function initMap() {
-    var uluru = {lat: 49.234209, lng: -123.028132};
+    var coor = {lat: 49.234209, lng: -123.028132};
         var map = new google.maps.Map(document.getElementById('googleMap'), {
           zoom: 15,
-          center: uluru
+          center: coor
         });
         var marker = new google.maps.Marker({
-          position: uluru,
+          position: coor,
           map: map
         });
 }

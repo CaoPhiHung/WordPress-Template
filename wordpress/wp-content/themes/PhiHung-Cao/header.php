@@ -2,7 +2,7 @@
 <HTML>
    <HEAD>
       <meta charset="UTF-8">
-      <title>Vancouver Meidical College</title>
+      <title><?php echo bloginfo('title');?></title>
       <link rel="stylesheet" href= "<?php echo get_template_directory_uri();?>/style.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="<?php echo get_template_directory_uri();?>/js/loginmodal.js"></script>
@@ -24,16 +24,16 @@
                <a role="button" aria-expanded="false" href="#" id="buttonExpand" class="icon" onclick="toggle('navbar','buttonExpand')">&#9776;</a>
                <ul id="navbar">
                   <li>
-                     <a href="<?php echo home_url(); ?>/#home">Home</a>
+                     <a href="<?php echo home_url(); ?>/#">Home</a>
                   </li>
                   <li>
-                     <a href="<?php echo home_url(); ?>/#mission">Mission</a>
+                     <a href="<?php echo home_url(); ?>/#mission">Our Mission</a>
                   </li>
                   <li>
-                     <a href="<?php echo home_url(); ?>/#staff">Staff</a>
+                     <a href="<?php echo home_url(); ?>/#staff">Our Staff</a>
                   </li>
                   <li>
-                     <a href="<?php echo home_url(); ?>/#services">Service</a>
+                     <a href="<?php echo home_url(); ?>/#services">Our Program</a>
                   </li>
                   <li>
                      <a href="<?php echo home_url(); ?>/all-posts">All Posts</a>
@@ -71,7 +71,7 @@
          <?php the_custom_header_markup(); ?>
          <div class="img-banner">
             <div class="inner-container">
-               <h1>Vancouver Medical College</h1>
+               <h1><?php echo bloginfo('title');?></h1>
                <h2><i>"Love what you do and do what you love"</i></h2>
                <h3><i>Ray Bradbury</i></h3>
             </div>
