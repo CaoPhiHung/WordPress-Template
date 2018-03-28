@@ -53,14 +53,14 @@ Tags: html, advanced css, jquery, css grid, animation ,....
 
     @media (min-width: 768px){
         .grid-container{
-        width: 750px
+        width: 100%
         }
     }
 
     /** for device 992px - 1199px */
     @media (min-width: 992px){
     .grid-container{
-    width: 800px;
+    width: 100%
     }
     .col-6{
     width: 50%;
@@ -73,14 +73,14 @@ Tags: html, advanced css, jquery, css grid, animation ,....
     /** for device larger than 1200px */
     @media (min-width: 1200px){
         .grid-container{
-            width: 1024px;
+            width: 100%
         }
     }
 
     /** for device larger than 1300px */
     @media (min-width: 1300px){
         .grid-container{
-            width: 1280px;
+            width: 100%
         }
     }
 
@@ -594,9 +594,6 @@ span.psw {
     width: 98%;
   }
 
-  .blog-post{
-      width: 90%;
-  }
 
 .blog-post-title{
     text-align: center;
